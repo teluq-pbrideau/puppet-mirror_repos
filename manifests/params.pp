@@ -1,6 +1,6 @@
 #mirror_repos parameters
 class mirror_repos::params {
-  case $facts['os'['family'] {
+  case $facts['os']['family'] {
     'RedHat': {
               $packages           = ['createrepo', 'yum-utils']
               $manage_vhost       = true
