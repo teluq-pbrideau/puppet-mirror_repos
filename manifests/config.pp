@@ -32,6 +32,10 @@ class mirror_repos::config {
     true  => '--delete',
     false => '',
   }
+  $arch_option = $mirror_repos::arch ? {
+    undef   => '',
+    default => "--arch=${mirror_repos::arch}"
+  }
   #copy file to update repos to localhost
   file { '/usr/sbin/update-repos':
     ensure  => file,

@@ -57,7 +57,7 @@ main(){
             <%- elsif @os['release']['major'] == '7' -%>
             $REPOSYNC_CMD -q -l -c $CONFIG_DIR/$OS.conf --repoid=$REPO --download_path=$REPOS_DIR/$OS/ <%= @download_metadata_option -%> <%= @delete_old_option %>
             <%- elsif @os['release']['major'] == '8' -%>
-            $REPOSYNC_CMD -q -c $CONFIG_DIR/$OS.conf --repoid=$REPO --download-path=$REPOS_DIR/$OS/ <%= @download_metadata_option -%> <%= @delete_old_option %>
+            $REPOSYNC_CMD -q -c $CONFIG_DIR/$OS.conf --repoid=$REPO --download-path=$REPOS_DIR/$OS/ <%= @download_metadata_option -%> <%= @delete_old_option %> <%= @arch_option -%>
             <%- end -%>
 
             #create yum repository from local synced directories
