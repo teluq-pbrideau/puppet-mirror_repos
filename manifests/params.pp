@@ -11,7 +11,7 @@ class mirror_repos::params {
               $createrepo_options = []
               $download_metadata  = false
               $delete_old         = false
-              $arch               = undef
+              $arch               = []
               $legacy_cron        = false
               $cron_minute        = '0'
               $cron_hour          = '1'
