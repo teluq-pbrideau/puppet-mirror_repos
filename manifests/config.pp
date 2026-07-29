@@ -29,8 +29,8 @@ class mirror_repos::config {
     false => '',
   }
   $arch_option = $mirror_repos::arch ? {
-    undef   => '',
-    default => "--arch=${mirror_repos::arch}"
+    []      => '',
+    default => $mirror_repos::arch.map |$_a| { "--arch=${_a}" }.join(' ')
   }
   #copy file to update repos to localhost
   file { '/usr/sbin/update-repos':
